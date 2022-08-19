@@ -17,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Http\Controllers\Main\IndexController::class);
 
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class);
+});
 
 Auth::routes();
