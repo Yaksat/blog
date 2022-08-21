@@ -20,7 +20,7 @@ Route::get('/', \App\Http\Controllers\Main\IndexController::class);
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class);
     Route::group(['prefix' => 'categories'], function () {
-        Route::get('/', \App\Http\Controllers\Admin\Category\IndexController::class);
+        Route::get('/', \App\Http\Controllers\Admin\Category\IndexController::class)->name('category.index');
     });
 });
 
