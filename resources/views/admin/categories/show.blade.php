@@ -8,6 +8,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">{{ $category->title }}</h1>
+                        <a href="{{ route('admin.category.edit', $category->id) }}"> <i class="fas fa-edit"></i> </a>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -44,11 +45,6 @@
                             </div>
                             <!-- /.card-body -->
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-1.5 mb-3 ml-2">
-                        <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-block btn-primary">Редактировать</a>
                     </div>
                 </div>
                 <!-- /.row -->
