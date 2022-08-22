@@ -46,6 +46,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-1.5 mb-3 ml-2">
+                        <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-block btn-primary">Редактировать</a>
+                    </div>
+                </div>
                 <!-- /.row -->
             </div><!-- /.container-fluid -->
         </section>
