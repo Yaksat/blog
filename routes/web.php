@@ -19,7 +19,7 @@ Route::get('/', \App\Http\Controllers\Main\IndexController::class);
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class);
-    Route::group(['prefix' => 'categories'], function () {
+    Route::group(['prefix' => 'category'], function () {
         Route::get('/', \App\Http\Controllers\Admin\Category\IndexController::class)->name('admin.category.index');
         Route::get('/create', \App\Http\Controllers\Admin\Category\CreateController::class)->name('admin.category.create');
         Route::post('/', \App\Http\Controllers\Admin\Category\StoreController::class)->name('admin.category.store');
