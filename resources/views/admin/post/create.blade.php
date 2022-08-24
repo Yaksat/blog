@@ -98,7 +98,6 @@
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Добавить">
                         </div>
-
                     </form>
                 </div>
             </div>
