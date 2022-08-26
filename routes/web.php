@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', \App\Http\Controllers\Admin\Post\IndexController::class)->name('admin.post.index');
-        Route::get('/create', \App\Http\Controllers\Admin\Post\CreateController::class)->name('admin.post.create');
+        Route::get('/create', \App\Http\Controllers\Admin\Post\BaseController::class)->name('admin.post.create');
         Route::post('/', \App\Http\Controllers\Admin\Post\StoreController::class)->name('admin.post.store');
         Route::get('/{post}', \App\Http\Controllers\Admin\Post\ShowController::class)->name('admin.post.show');
         Route::get('/{post}/edit', \App\Http\Controllers\Admin\Post\EditController::class)->name('admin.post.edit');
