@@ -30,9 +30,15 @@
                         @csrf
                         @method('patch')
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Имя пользователя" value="{{ $user->name }}">
+                            <input type="text" class="form-control" name="name" placeholder="Имя пользователя" value="{{ old('name', $user->name) }}">
                             @error('name')
-                                <div class="text-danger">Это поле необходимо заполнить</div>
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{ $user->email }}">
+                            @error('email')
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <input type="submit" class="btn btn-primary" value="Обновить">
