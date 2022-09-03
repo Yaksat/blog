@@ -22,6 +22,7 @@ Route::group(['prefix' => 'personal', 'middleware' => ['auth', 'verified']], fun
 
     Route::group(['prefix' => 'likeds'], function () {
         Route::get('/', \App\Http\Controllers\Personal\Liked\IndexController::class)->name('personal.liked.index');
+        Route::delete('/{post}', \App\Http\Controllers\Personal\Liked\DestroyController::class)->name('personal.liked.destroy');
     });
 
     Route::group(['prefix' => 'comments'], function () {

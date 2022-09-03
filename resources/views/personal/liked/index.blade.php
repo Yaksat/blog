@@ -43,9 +43,8 @@
                                         <td>{{$post->id}}</td>
                                         <td>{{$post->title}}</td>
                                         <td class="text-center"> <a href="{{ route('admin.post.show', $post->id) }}"> <i class="far fa-eye"></i> </a></td>
-                                        <td class="text-center"> <a href="{{ route('admin.post.edit', $post->id) }}"> <i class="fas fa-edit text-success"></i> </a></td>
                                         <td class="text-center">
-                                            <form action="{{route('admin.post.destroy', $post->id)}}" method="POST">
+                                            <form action="{{route('personal.liked.destroy', $post->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="border-0 bg-transparent">
