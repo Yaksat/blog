@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', \App\Http\Controllers\Main\IndexController::class);
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
-    Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class);
+    Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class)->name('admin.main.index');
 
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', \App\Http\Controllers\Admin\Post\IndexController::class)->name('admin.post.index');
