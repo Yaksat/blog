@@ -17,6 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Http\Controllers\Main\IndexController::class);
 
+Route::group(['prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
+    Route::get('/', \App\Http\Controllers\Personal\Main\IndexController::class)->name('personal.main.index');
+
+    Route::group(['prefix' => 'likeds'], function () {
+        Route::get('/', \App\Http\Controllers\Personal\Liked\IndexController::class)->name('personal.liked.index');
+    });
+
+    Route::group(['prefix' => 'comments'], function () {
+        Route::get('/', \App\Http\Controllers\Personal\Comment\IndexController::class)->name('personal.comment.index');
+    });
+});
+
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
     Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class)->name('admin.main.index');
 
