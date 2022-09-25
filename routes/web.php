@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Http\Controllers\Main\IndexController::class)->name('main.index');
 
+Route::group(['prefix' => 'posts'], function () {
+    Route::get('/', \App\Http\Controllers\Post\IndexController::class)->name('post.index');
+    Route::get('/{post}', \App\Http\Controllers\Post\ShowController::class)->name('post.show');
+});
+
 Route::group(['prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
     Route::get('/', \App\Http\Controllers\Personal\Main\IndexController::class)->name('personal.main.index');
 
